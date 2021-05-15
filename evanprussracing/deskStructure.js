@@ -33,61 +33,54 @@ export default () =>
         )
         .icon(FiSettings),
         S.divider(),
-        S.listItem()
-            .title('Home')
-            .child(
+      S.listItem()
+        .title('Home')
+        .child(
               
-            )
-            .icon(FiHome),
+        )
+        .icon(FiHome),
           S.divider(),
-          S.listItem()
-            .title('Race')
-            .child(
-              S.list()
-              .title('Race')
-              .items([
+      S.listItem()
+        .title('Race')
+        .child(
+          S.list()
+          .title('Race')
+          .items([
 
-              ])
-            )
-            .icon(FiTruck),
+          ])
+        )
+         .icon(FiTruck),
+        S.listItem()
+        .title('News')
+        .child(
+          S.list()
+          .title('News')
+          .items([
             S.listItem()
-            .title('News')
-            .child(
-              S.list()
-              .title('News')
-              .items([
-                S.listItem()
-                  .title('Post')
-                  .child(
-                    S.document()
-                      .schemaType('post')
-                      .documentId('post')
-                  ),
-                  S.divider(),
-                  S.listItem()
-                  .title('Author')
-                  .child(
-                    S.document()
-                      .schemaType('author')
-                      .documentId('author')
-                  ),
-                  S.listItem()
-                  .title('Category')
-                  .child(
-                    S.document()
-                      .schemaType('category')
-                      .documentId('category')
-                  )
+              .title('Post')
+              .schemaType('post')
+              .child(S.documentTypeList('post').title('Post')),           
+              S.divider(),
+              S.listItem()
+              .title('Author')
+              .schemaType('author')
+              .child(S.documentTypeList('author').title('Author')),
+              S.listItem()
+              .title('Category')
+              .schemaType('category')
+              .child(S.documentTypeList('category').title('Category'))
 
-
-              ])
-            )
+          ])
+        )
             .icon(FiTv),
-            S.listItem()
-            .title('About')
-            .child(
-              
-            )
-            .icon(FiMeh)
+        S.listItem()
+        .title('About')
+        .child(
+          
+        )
+        .icon(FiMeh),
+        S.divider(),
+        ...S.documentTypeListItems().filter(item => !['post', 'author', 'category'].includes(item.getId()))
+
         ])
       
