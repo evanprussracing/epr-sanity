@@ -7,11 +7,17 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      options: {
+        isHighlighted: true
+      }
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text',
+      options: {
+        isHighlighted: true
+      }
     },
   ],
 }

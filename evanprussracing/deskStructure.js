@@ -50,37 +50,43 @@ export default () =>
           ])
         )
          .icon(FiTruck),
-        S.listItem()
+      S.listItem()
+      .title('News')
+      .child(
+        S.list()
         .title('News')
-        .child(
-          S.list()
-          .title('News')
-          .items([
+        .items([
+          S.listItem()
+            .title('Post')
+            .schemaType('post')
+            .child(S.documentTypeList('post').title('Post')),           
+          S.divider(),
             S.listItem()
-              .title('Post')
-              .schemaType('post')
-              .child(S.documentTypeList('post').title('Post')),           
-              S.divider(),
-              S.listItem()
-              .title('Author')
-              .schemaType('author')
-              .child(S.documentTypeList('author').title('Author')),
-              S.listItem()
-              .title('Category')
-              .schemaType('category')
-              .child(S.documentTypeList('category').title('Category'))
-
-          ])
-        )
-            .icon(FiTv),
-        S.listItem()
-        .title('About')
-        .child(
-          
-        )
-        .icon(FiMeh),
-        S.divider(),
-        ...S.documentTypeListItems().filter(item => !['post', 'author', 'category'].includes(item.getId()))
+            .title('Author')
+            .schemaType('author')
+            .child(S.documentTypeList('author').title('Author')),
+            S.listItem()
+            .title('Category')
+            .schemaType('category')
+            .child(S.documentTypeList('category').title('Category'))
+        ])
+      )
+        .icon(FiTv),
+      S.listItem()
+      .title('About')
+      .child(
+        S.list()
+        .title('about')
+        .items([
+          S.listItem()
+            .title('About Post')
+            .schemaType('aboutPost')
+            .child(S.documentTypeList('aboutPost').title('About Block'))
+        ])
+      )
+      .icon(FiMeh),
+      S.divider(),
+      ...S.documentTypeListItems().filter(item => !['aboutPost', 'post', 'author', 'category'].includes(item.getId()))
 
         ])
       
