@@ -86,7 +86,20 @@ export default () =>
       )
       .icon(FiMeh),
       S.divider(),
-      ...S.documentTypeListItems().filter(item => !['aboutPost', 'post', 'author', 'category'].includes(item.getId()))
+      S.listItem()
+      .title('Partners')
+      .child(
+        S.list()
+        .title('sponsors')
+        .items([
+          S.listItem()
+            .title('Sponsor Post')
+            .schemaType('sponsorPost')
+            .child(S.documentTypeList('sponsorPost').title('Sponsor Post'))
+        ])
+      )
+      .icon(FiMeh),
+      ...S.documentTypeListItems().filter(item => !['aboutPost', 'post', 'author', 'category', 'generalSettings', 'sponsorPost'].includes(item.getId()))
 
         ])
       

@@ -12,8 +12,8 @@ import author from './author'
 import category from './category'
 // Document Types
 import generalSettings from './documents/settings-general'
-import seoSettings from './documents/settings-seo'
 import galleryImage from './galleryImage'
+import sponsorPost from './sponsorPost'
 
 // Objects
 import gallery from './objects/gallery'
@@ -31,9 +31,9 @@ export default createSchema({
     post,
     author,
     category,
-
     generalSettings,
-    seoSettings,
+    sponsorPost,
+   
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

@@ -18,6 +18,11 @@ export default {
       },
     },
     {
+      name: 'photog',
+      title: 'Photo By',
+      type: 'string'
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
