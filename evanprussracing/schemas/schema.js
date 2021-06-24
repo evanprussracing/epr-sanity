@@ -14,6 +14,7 @@ import category from './category'
 import generalSettings from './documents/settings-general'
 import galleryImage from './galleryImage'
 import sponsorPost from './sponsorPost'
+import results from './table'
 
 // Objects
 import gallery from './objects/gallery'
@@ -33,6 +34,7 @@ export default createSchema({
     category,
     generalSettings,
     sponsorPost,
+    results,
    
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

@@ -46,7 +46,11 @@ export default () =>
           S.list()
           .title('Race')
           .items([
-
+            S.listItem()
+            .title('Table')
+            .schemaType('results')
+            .child(S.documentTypeList('results').title('Tables'))
+            .icon(FiTv)
           ])
         )
          .icon(FiTruck),
@@ -88,7 +92,6 @@ export default () =>
         ])
       )
       .icon(FiUser),
-      S.divider(),
       S.listItem()
       .title('Partners')
       .child(
@@ -103,7 +106,7 @@ export default () =>
         ])
       )
       .icon(FiDollarSign),
-      ...S.documentTypeListItems().filter(item => !['aboutPost', 'post', 'author', 'category', 'generalSettings', 'sponsorPost'].includes(item.getId()))
+      ...S.documentTypeListItems().filter(item => !['aboutPost', 'post', 'author', 'category', 'generalSettings', 'sponsorPost', 'results'].includes(item.getId()))
 
         ])
       
